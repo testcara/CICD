@@ -3,5 +3,5 @@ Flask
 Flask-WTF
 flask-bootstrap
 flask-sqlalchemy
-mysql-python
+mysqlclient
 flask-migrate
