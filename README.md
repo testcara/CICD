@@ -1,2 +1,1 @@
-# CICD
-Try CI/CD here
+# Try CI/CD here
