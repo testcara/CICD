@@ -9,8 +9,10 @@
 		<table>
 		{% for user in users %}
 		<tr>
-			<td> {{ user.username }} </td>
-			<td> {{ user.email }} </td>
+			<td> ID: {{ user.id }}</td></br>
+			<td> Username: {{ user.username }}</td>	</br>	
+			<td> Email: {{ user.email }} </td> </br>
+			</br>
 		</tr>
 		{% endfor %}
 	    </table>
