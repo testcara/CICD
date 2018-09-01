@@ -2,17 +2,15 @@ from flask import Flask, render_template, flash, request
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 
 from . import user
-from forms import UserForm, FindUserForm
+from . import forms
 from app import db
 from app import User
- 
-
 
 @user.route('/create_user', methods=['GET', 'POST'])
 def create_user():
     form = UserForm()
  
-    print form.errors
+    #print form.errors
     if form.validate_on_submit():
         user = User(email = form.email.data,
                     username = form.username.data)
