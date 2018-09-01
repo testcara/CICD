@@ -8,7 +8,7 @@ def create_app():
 	application = Flask(__name__)
 	Bootstrap(application)
 	application.config['SECRET_KEY'] = 'p9Bv<3Eid9%$i01'
-	application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:redhat@localhost/test'
+	application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://redhat:redhat@people-management-mysql-db/test_cara'
 	db.init_app(application)
 	migrate = Migrate(application, db)
 

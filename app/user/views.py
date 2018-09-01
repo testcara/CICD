@@ -8,7 +8,7 @@ from app import User
 
 @user.route('/create_user', methods=['GET', 'POST'])
 def create_user():
-    form = UserForm()
+    form = forms.UserForm()
  
     #print form.errors
     if form.validate_on_submit():
@@ -23,7 +23,7 @@ def create_user():
 
 @user.route('/find_user', methods=['GET', 'POST'])
 def find_user():
-    form = FindUserForm()
+    form = forms.FindUserForm()
     if request.method == 'POST':
         if form.validate_on_submit():
                 user = User.query.filter_by(email=form.email.data).first()
