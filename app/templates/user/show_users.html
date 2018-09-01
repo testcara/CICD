@@ -6,14 +6,12 @@
 <div class="content-section">
 	<div class="center">
 		<h1>Show Users</h1>
-		<table>
 		{% for user in users %}
-		<tr>
-			<td> ID: {{ user.id }}</td></br>
-			<td> Username: {{ user.username }}</td>	</br>	
-			<td> Email: {{ user.email }} </td> </br>
-			</br>
-		</tr>
+		<p>
+		ID: {{ user.id }}<br/>
+		Username: {{ user.username }}<br/>
+		Email: {{ user.email }}<br/>
+		</p>
 		{% endfor %}
 	    </table>
 	</div>
