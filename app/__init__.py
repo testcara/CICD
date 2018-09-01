@@ -5,19 +5,19 @@ from flask_bootstrap import Bootstrap
 
 db = SQLAlchemy()
 def create_app():
-	app = Flask(__name__)
-	Bootstrap(app)
-	app.config['SECRET_KEY'] = 'p9Bv<3Eid9%$i01'
-	app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:redhat@localhost/test'
-	db.init_app(app)
-	migrate = Migrate(app, db)
+	application = Flask(__name__)
+	Bootstrap(application)
+	application.config['SECRET_KEY'] = 'p9Bv<3Eid9%$i01'
+	application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:redhat@localhost/test'
+	db.init_app(application)
+	migrate = Migrate(application, db)
 
 	from .user import user as user_blueprint
-	app.register_blueprint(user_blueprint)
+	application.register_blueprint(user_blueprint)
 	from .home import home as home_blueprint
-	app.register_blueprint(home_blueprint)
+	application.register_blueprint(home_blueprint)
 	
-	return app
+	return application
 
 # if we create models.py with the following content
 # and we add 'from models import User' in the 'create_app' function
