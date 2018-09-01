@@ -16,7 +16,7 @@ def create_user():
                     username = form.username.data)
         db.session.add(user)
         db.session.commit()
-        flash('Created Successfully!')
+    #    flash('Created Successfully!')
         return render_template('user/show_user.html', user = user, title='show_user')
 
     return render_template('user/create_user.html', form=form)
@@ -28,7 +28,7 @@ def find_user():
         if form.validate_on_submit():
                 user = User.query.filter_by(email=form.email.data).first()
                 if user != None:
-                    flash('Find the user!')
+     #               flash('Find the user!')
                     return render_template('user/show_user.html', user=user)
                 else:
                     flash("No such user in the database!")
